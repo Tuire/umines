@@ -1,0 +1,164 @@
+\documentclass{sigchi}
+
+% Use this command to override the default ACM copyright statement (e.g. for preprints). 
+% Consult the conference website for the camera-ready copyright statement.
+\toappear{
+	Submitted for review.
+}
+
+% Arabic page numbers for submission. 
+% Remove this line to eliminate page numbers for the camera ready copy
+\pagenumbering{arabic}
+
+
+% Load basic packages
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphics} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, 
+% to give it a fighting chance of not being over-written, 
+% since its job is to redefine many LaTeX commands.
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+pdftitle={SIGCHI Conference Proceedings Format},
+pdfauthor={LaTeX},
+pdfkeywords={SIGCHI, proceedings, archival format},
+bookmarksnumbered,
+pdfstartview={FitH},
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black,
+breaklinks=true,
+}
+
+% create a shortcut to typeset table headings
+\newcommand\tabhead[1]{\small\textbf{#1}}
+
+
+% End of preamble. Here it comes the document.
+\begin{document}
+
+\title{User Modeling in Exploratory Search}
+
+\numberofauthors{3}
+\author{
+  \alignauthor Ilkka Kiistala\\
+    \affaddr{Department of Computer Science, University of Helsinki}\\
+    \affaddr{Address}\\
+    \email{e-mail address}
+  \alignauthor Tuire Peurala\\
+    \affaddr{Department of Computer Science, University of Helsinki}\\
+    \affaddr{Address}\\
+    \email{e-mail address} 
+}
+
+\maketitle
+
+\begin{abstract}
+This is abstract.
+\end{abstract}
+
+\keywords{
+	Exploratory Search; Information Retrieval; User Modeling.
+}
+
+\category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
+
+
+\terms{
+	Human Factors; Design; Measurement. 
+}
+
+\section{Introduction}
+This is the introduction.
+
+
+\section{User modeling}
+Shortish explanation of user modeling key concepts. 
+\cite{rich99}, \cite{fischer01}
+
+\subsection{Sterotypes}
+Modeling  stereotypes. 
+HCI reference needed.
+\cite{dillon96}
+
+\subsection{Personalization}
+Individualization of user models, Adaptive/Adaptable User Interfaces, intelligent user interfaces
+\cite{bunt04}, \cite{findlater04}, \cite{van08} (leads to original sources)
+
+\section {Exploratory search is subtopic of information retrieval}
+
+\subsection{Information retrieval}
+There are many goals in information retrieval and exploratory search is one of them.
+\cite{hearst02}, 
+Kuhlthau, C.C. Inside the search process: Information seeking from the user's perspective  
+(1991) Journal of the American Society for Information Science, 42 (5), pp. 361-371.
+
+\subsection{Exploratory Search}
+Introduction to exploratory search.
+
+\cite{march06}, \cite{white09}
+Tvarožek, M. (2011). Exploratory search in the adaptive social semantic web.Information Sciences and Technologies Bulletin of the ACM Slovakia, 3(1), 42-51.
+
+\section{User modeling in exploratory search}
+How has user modeling been used in supporting exploratory search, example cases? What challenges have emerged? 
+\cite{oconnor10}
+
+K. Sugiyama, K. Hatano and M. Yoshikawa, '"Adaptive Web search based on user profile constructed without any effort from users,"Thirteenth International World Wide Web Conference Proceedings, WWW2004, pp. 675-684
+
+
+\section{Conclusion}
+Here are the conclusions.
+
+\nocite{*} %tämä listaa kaikki viitteet luetteloon vaikka niitä ei olisi vielä viitattu
+
+
+
+% Balancing columns in a ref list is a bit of a pain because you
+% either use a hack like flushend or balance, or manually insert
+% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
+% multicols doesn't work because we're already in two-column mode,
+% and flushend isn't awesome, so I choose balance.  See this
+% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
+%
+% Note that in a perfect world balance wants to be in the first
+% column of the last page.
+%
+% If balance doesn't work for you, you can remove that and
+% hard-code a column break into the bbl file right before you
+% submit:
+%
+% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
+% in-an-ieee-paper-if-using-bibtex
+%
+% Or, just remove \balance and give up on balancing the last page.
+%
+\balance
+
+% If you want to use smaller typesetting for the reference list,
+% uncomment the following line:
+% \small
+\bibliographystyle{acm-sigchi}
+\bibliography{umines}
+\end{document}
