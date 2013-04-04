@@ -161,7 +161,7 @@
 }
 
 @ARTICLE{oconnor10,
-  author = {O\’Connor, Brendan and Krieger, Michel and Ahn, David},
+  author = {O’Connor, Brendan and Krieger, Michel and Ahn, David},
   title = {Tweetmotif: Exploratory search and topic summarization for twitter},
   journal = {Proceedings of ICWSM},
   year = {2010},
