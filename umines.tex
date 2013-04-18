@@ -63,7 +63,7 @@ breaklinks=true,
 % End of preamble. Here it comes the document.
 \begin{document}
 
-\title{User Modeling in Exploratory Search}
+\title{Supporting Exploratory Search in User Interface}
 
 \def\tktl{Department of Computer Science\\University of Helsinki}
 \def\tktladdr{P.O. Box 68 (Gustaf H\"allstr\"omin katu 2b)\\
@@ -100,53 +100,31 @@ Human Factors; Design; Measurement.
 }
 
 \section{Introduction}
-Context – who needs, what needs, why that is a problem in current situation 
+In this literature review we introduce the problem of exploratory search and some solutions for the problem. We cover three techniques that help the user in succeeding in his exploratory search task efficiently.
+We explain what exploratory search is and what distinguishes it from other information retrieval tasks. 
 
-We'll describe here the roles of further chapters.
+To build a good system where machine and a human cooperate to perform a task it is important to take into account some significant characteristics of people \cite{rich99}. User model is built of these characteristics and traditionally it has been a model of a typical user \cite{rich99}. 
 
-\section{User modeling}
-\label{sec:usermodeling}
-Shortish explanation of user modeling key concepts. 
-\cite{rich99}, \cite{fischer01}
+In reality often the users vary so much that a traditional user model is insufficient and there is a need for a user model of an individual.
 
-To build a good system where machine and a human cooperate to perform a task it is important to take into account some significant characteristics of people \cite{rich99}. User model is built of these characteristics and traditionally it has been a model of a typical user \cite{rich99}. In reality often the users vary so much that a traditional user model is insufficient and there is a need for a user model of an individual.
+Define ES
 
-User models can be categorized in a three dimensional space (IMAGE?), where the axes are:  single model vs. collection of models, explicitly specified models vs. models inferred by the system on the basis of user behaviour and long-term vs. short-term user models \cite{rich99}. There are also other differences on user models like the model lifecycle; in a system where there is only a single model it can be permanently embedded with the system but in the case where there are models for each individual user the model is built on the fly. This and many other differences follow from aforementioned three axes and are not distinguished as categorizing user models \cite{rich99}.  
+\cite{van08}: 
+In order to accomodate to differing needs of users or usergroups over time, a system may use one of three basic approaches. System is called adaptive if it alters it structure, functionality or interface on the basis of a user model generated from \textit{implicit} user input. Adaptable systems use \textit{explicit user input} and need user's active participation. Personalized system is a hybrid of the two aforementioned.
 
-When choosing whether to use a canonical or individual user models one should think if the canonical model is sufficient or is the user community too heterogenous for it to be useful enough \cite{rich99}. The decision on this axis influences the other aspects of user modeling. If one user model is used then it has to be designed only once and the system doesn't have to prepare for incorrect or conflicting user model information as the case is on the latter option. The user model can be adapted to different users two ways explicitly or implicitly \cite{rich99}. User model may be formed by letting the user modify the system or gathering information about the user and that way forming a model \cite{rich99}. The prior leaves a lot on the hand of the user and fits badly to systems that expect to have lot of users that use the system only once or twice. The information gathering can be done explicitly by asking questions or implicitly by gathering information when the user interacts with the system. When constructing the user model implicitly the system must have some way of distinguishing incorrect information and resolve conflicts.System is called adaptive if it alters on the basis of a user model generated from implicit user input and adaptable systems use explicit user input \cite{van08}. Personalized system is a hybrid of the two above. ..Long-term vs. Short-term..
+In the following chapter we introduce basic concepts, solutions and systems that we found exploring the literature. 
+In the Discussion chapter we summarize our findings and point out what is missing and what we expect from future research. 
+The Conclusion chapter summarizes our findings.
 
 
-\subsection{Sterotypes}
-Modeling stereotypes. 
-% HCI reference needed
-\cite{dillon96}, \cite{pu02}
-Traditional user models have been constructed by collecting data on an average user on various tasks and environments \cite{rich99}. An example of a sterotypical user model is Fitt's law that suggests that the speed on which the user operates the machine can be increased by increasing the size of targets the user must hit. The major weakness of these kind of models is that they assume that all the users constitute a homogenous set. In most cases for the majority of users the system is better adapted to them that would be without any adaptation, but it isn't likely the best system that could be produced \cite{rich99}.
+\section{Literature review}
+\label{sec:litreview}
 
-\subsection{How to Collect and Analyze User Information}
-% Pazzani puhuu "user profileista"
-\cite{pazzani97}, \cite{white10}
-
-\subsection{Personalization}
-Individualization of user models, Adaptive/Adaptable User Interfaces, intelligent user interfaces
-\cite{bunt04}, \cite{findlater04}, \cite{brusi96}
-
-\cite{van08}: "Personalized system's output or appearance differs for every user or user group in every context. The adapted output has the potential to be a great benefit for users; it is geared towards the user's preferences, behaviour or needs and it can make interaction easier and a lot more fruitful." The evaluation of a personalized system is problematic because it is unclear if the results gathered from a few individuals who all used system personalized for them can be generalized to entire population of users.
-
-\cite{van08}: The writers are researchers at University of Twente, Netherlands. They took a look at scientific articles about “user-centered evaluation (UCE) studies of adaptive and adaptable systems”. The articles they reviewed are from 2007 and before. They reviewed 63 studies. Of the systems in the studies, 37 \% were adaptive, 27 \% adaptable and the rest, 36 \%, were both adaptive and adaptable. As a result of their literature review, they have modeled a process that can be used in evaluating a personalized system.
-The model they present, “the iterative design process for a personalized system”, has four phases based on how ready the system is. Based on their findings in the studies they reviewed, they connect the most useful methods to use and most appropriate variables to investigate in each phase.
-Overall, the article notes that “the current UCE practice of personalized systems was found to be sloppy at times”. They found that some of the questionnaires they reviewed were poorly designed and suggest that all the questionnaire data and log data as well should be made available so that a reader can judge the quality of the study. One reason they mention for low quality evaluations is that most evaluators of personalized systems are computer scientists and not specialized in evaluation.
-
-Including adaptive elements in the user interface might increase the workload of the user. When users had two alternative interfaces to a menu, an adapted one and a full one, there was cognitive overhead in 1) having to decide which features to include in the personalized interface and 2) having to figure out a menu item was missing and that changing to thee full interface would make it appear in the menu again \cite{bunt04}.
-
-\section {Exploratory search is a subtopic of information retrieval}
-
-\subsection{Information retrieval}
-There are many goals in information retrieval and exploratory search is one of them.
-\cite{hearst02}, \cite{kuhlt91}
-
-Information seekers often express a desire for a user interface that organizes search results into meaningful groups, in order to help make sense of the results and to help decide what to do next \cite{hearst06}. There two ways of grouping search results; clustering and hierarchical faceted categories. Clustering is grouping of items based on some similarity and is fully automated process. It is good for clarifying a vague query but the clustering algorithms aren't yet perfect and the clustering can be unpredicted \cite{hearst06}. Category system is a set of labels that are organized to mirror the domain. Hierarchical faceted categories are a set of hierarchical categories that each represent a different dimension. Categories are usually created manually but can be partly automated. 
+(User Modeling) \cite{rich99}, \cite{fischer01}
 
 \subsection{Exploratory Search}
+(Ilkka)
+
 Introduction to exploratory search.
 \cite{march06}, \cite{white09}, \cite{tvaro11}
 
@@ -163,45 +141,56 @@ The user interface of an exploratory search system should be designed to fulfill
 
 However, evaluating exploratory search systems is difficult, because users have different starting positions. Their knowledge of the domain varies, they are interested in different aspects of the topic and they have previously encountered different information. \cite{kules08}
 
-\section{User modeling in exploratory search}
-Generally
-\cite{oconnor10}, \cite{sugi04}, \cite{white07}, \cite{kules09}
+Exploratory search tasks can be characterized as either learning oriented or investigative  and they have common aspects like uncertainty, ambiguity and discovery distinguishing them from look-up oriented tasks \cite{kules09}.
+
+
+\subsection{User Modeling}
+We explain how User Modeling might help in ES.
+(Tuire)
+
+User models can be categorized in a three dimensional space (IMAGE?), where the axes are:  single model vs. collection of models, explicitly specified models vs. models inferred by the system on the basis of user behaviour and long-term vs. short-term user models \cite{rich99}. There are also other differences on user models like the model lifecycle; in a system where there is only a single model it can be permanently embedded with the system but in the case where there are models for each individual user the model is built on the fly. This and many other differences follow from aforementioned three axes and are not distinguished as categorizing user models \cite{rich99}.  
+
+When choosing whether to use a canonical or individual user models one should think if the canonical model is sufficient or is the user community too heterogenous for it to be useful enough \cite{rich99}. The decision on this axis influences the other aspects of user modeling. If one user model is used then it has to be designed only once and the system doesn't have to prepare for incorrect or conflicting user model information as the case is on the latter option. The user model can be adapted to different users two ways explicitly or implicitly \cite{rich99}. User model may be formed by letting the user modify the system or gathering information about the user and that way forming a model \cite{rich99}. The prior leaves a lot on the hand of the user and fits badly to systems that expect to have lot of users that use the system only once or twice. The information gathering can be done explicitly by asking questions or implicitly by gathering information when the user interacts with the system. When constructing the user model implicitly the system must have some way of distinguishing incorrect information and resolve conflicts.System is called adaptive if it alters on the basis of a user model generated from implicit user input and adaptable systems use explicit user input \cite{van08}. Personalized system is a hybrid of the two above. ..Long-term vs. Short-term..
+
+(oli Stereotypes)
+Traditional user models have been constructed by collecting data on an average user on various tasks and environments \cite{rich99}. An example of a sterotypical user model is Fitt's law that suggests that the speed on which the user operates the machine can be increased by increasing the size of targets the user must hit. The major weakness of these kind of models is that they assume that all the users constitute a homogenous set. In most cases for the majority of users the system is better adapted to them that would be without any adaptation, but it isn't likely the best system that could be produced \cite{rich99}.
+
+(oli: Personalization)
+Individualization of user models, Adaptive/Adaptable User Interfaces, intelligent user interfaces
+\cite{bunt04}, \cite{findlater04}, \cite{brusi96}
+
+\cite{van08}: "Personalized system's output or appearance differs for every user or user group in every context. The adapted output has the potential to be a great benefit for users; it is geared towards the user's preferences, behaviour or needs and it can make interaction easier and a lot more fruitful." The evaluation of a personalized system is problematic because it is unclear if the results gathered from a few individuals who all used system personalized for them can be generalized to entire population of users.
+
+\cite{van08}: The writers are researchers at University of Twente, Netherlands. They took a look at scientific articles about “user-centered evaluation (UCE) studies of adaptive and adaptable systems”. The articles they reviewed are from 2007 and before. They reviewed 63 studies. Of the systems in the studies, 37 \% were adaptive, 27 \% adaptable and the rest, 36 \%, were both adaptive and adaptable. As a result of their literature review, they have modeled a process that can be used in evaluating a personalized system.
+The model they present, “the iterative design process for a personalized system”, has four phases based on how ready the system is. Based on their findings in the studies they reviewed, they connect the most useful methods to use and most appropriate variables to investigate in each phase.
+Overall, the article notes that “the current UCE practice of personalized systems was found to be sloppy at times”. They found that some of the questionnaires they reviewed were poorly designed and suggest that all the questionnaire data and log data as well should be made available so that a reader can judge the quality of the study. One reason they mention for low quality evaluations is that most evaluators of personalized systems are computer scientists and not specialized in evaluation.
+
+Including adaptive elements in the user interface might increase the workload of the user. When users had two alternative interfaces to a menu, an adapted one and a full one, there was cognitive overhead in 1) having to decide which features to include in the personalized interface and 2) having to figure out a menu item was missing and that changing to the full interface would make it appear in the menu again \cite{bunt04}.
+
+(Kun tiedetään käyttäjästä jotain... jatketaan Solutions-kohtaan)
+
+In the following subsections we cover three different solutions that support exploratory search: faceted search, relevance feedback and query expansion.
+
+\subsection{Faceted search}
+
+Information seekers often express a desire for a user interface that organizes search results into meaningful groups, in order to help make sense of the results and to help decide what to do next \cite{hearst06}. There two ways of grouping search results; clustering and hierarchical faceted categories. Clustering is grouping of items based on some similarity and is fully automated process. It is good for clarifying a vague query but the clustering algorithms aren't yet perfect and the clustering can be unpredicted \cite{hearst06}. Category system is a set of labels that are organized to mirror the domain. Hierarchical faceted categories are a set of hierarchical categories that each represent a different dimension. Categories are usually created manually but can be partly automated. 
 
 \cite{kules09}:The writers had done a user experiment to find out what  the searchers are  looking at in a faceted search UI. The test participants were  university students and the system of interest was a library system. As a result  of the eyetracker test the writers found out that participants looked a lot at the facets and  47,4\% of the  eye movement  was between facets, breadcrums summarising the selected facets and the result list. In an interview the participants told they used facets to help organize their view on the topic domain and select sub-topics for further investigation. Of these results the researchers deduced that the facets played an important role in the exploratory search process. 
 The article summarizes related study on faceted search and exploratory search and has many interesting leads on articles for our essay topic.
 
 Exploratory search is a complex information seeking task and to support this it has become accepted to use faceted search or categorized overviews \cite{kules09}. Structured metadata is used to provide the user with an overview of the results and clickable categories. With this UI approach the user doesn't have to reformulate the query to narrow and browse the results. Faceted search is used in practice in library catalogs, web search, online shopping and other domains \cite{kules09}. Faceted search enables the user to change fluidly between search and browsing and searchers with partially defined or changing information needs can use the overview to understand the knowledge domain and refine their needs. It has been shown that when using faceted search the users explored their results more broadly than without facets and felt more organized about their searches. Still though the faceted search interfaces make the search more efficient the subjects don't always prefer it \cite{kules09}. 
 
-Exploratory search tasks can be characterized as either learning oriented or investigative  and they have common aspects like uncertainty, ambiguity and discovery distinguishing them from look-up oriented tasks \cite{kules09}.
 
-\subsection{User Model Construction Methods}
+- System examples
+\subsection{Relevance feedback}
+(also User Modeling) The goal of user modeling for a search system is to model a user's information need. The obvious source of information is the query. But as the queries tend to be quite short, especially when using a mobile device, the search words may not be a very accurate source of information for the user's information need. Much more data is available if user is given the opportunity to give feedback on the search results. This \emph{relevance feedback} has been found to improve retrieval accuracy \cite{salton90}. This, however, requires extra effort from the users and users are reluctant to make extra effort \cite{kelly03}. As \cite{shen05} shows, user action data can be used to improve the search results without the extra effort. They collected all the actions the user did and used them to update the user model. This user model was used in customizing the ranking which the results were based on.
+- System examples
+\subsection{Query expansion}
+- System examples
 
-The goal of user modeling for a search system is to model a user's information need. The obvious source of information is the query. But as the queries tend to be quite short, especially when using a mobile device, the search words may not be a very accurate source of information for the user's information need. Much more data is available if user is given the opportunity to give feedback on the search results. This \emph{relevance feedback} has been found to improve retrieval accuracy \cite{salton90}. This, however, requires extra effort from the users and users are reluctant to make extra effort \cite{kelly03}. As \cite{shen05} shows, user action data can be used to improve the search results without the extra effort. They collected all the actions the user did and used them to update the user model. This user model was used in customizing the ranking which the results were based on.
+\section{Discussion}
+In the Discussion chapter we summarize our findings and point out what is missing and what we expect from future research. 
 
-\subsection{Utilizing the User Model}
-
-Search interface and search results, how they are affected by User Model?
-
-Stereotypes used? Personalization used?
-
-\cite{van08}: 
-In order to accomodate to differing needs of users or usergroups over time, a system may use one of three basic approaches. System is called adaptive if it alters it structure, functionality or interface on the basis of a user model generated from \textit{implicit} user input. Adaptable systems use \textit{explicit user input} and need user's active participation. Personalized system is a hybrid of the two aforementioned.
-
-\subsection{Experience}
-
-How has user modeling been used in supporting exploratory search, example cases? What challenges have emerged? 
-
-- Cases
-
-\subsection{Analysis}
-
-- Challenges
-- Success
-- Failures
-
-\subsection{Recommendations, Future improvement needs etc.}
-
-See Cases: Conclusions
 
 \section{Conclusion}
 Goal, solution summary
