@@ -10,14 +10,14 @@ Second draft
 % Arabic page numbers for submission. 
 % Remove this line to eliminate page numbers for the camera ready copy
 \pagenumbering{arabic}
-
-
 % Load basic packages
 \usepackage{balance}  % to better equalize the last page
-\usepackage{graphics} % for EPS, load graphicx instead
-%%\usepackage{graphicx}
+%\usepackage{graphics} % for EPS, load graphicx instead
+\usepackage{graphicx}
 \usepackage{times}    % comment if you want LaTeX's default font
 \usepackage{url}      % llt: nicely formatted URLs
+
+
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -149,7 +149,12 @@ Exploratory search tasks can be characterized as either learning oriented or inv
 
 To build a good system where machine and a human cooperate to perform a task it is important to take into account some significant characteristics of people \cite{rich99}. User models are built of these characteristics and are used to adapt the system toward the user. 
 
-User models can be categorized in a three dimensional space (IMAGE?), where the axes are:  single model vs. collection of models, explicitly specified models vs. models inferred by the system on the basis of user behaviour and long-term vs. short-term user models \cite{rich99}. These three dichtomies are explained further in this chapter. There are also other differences on user models like the model lifecycle; in a system where there is only a single model it can be permanently embedded with the system but in the case where there are models for each individual user the model is built on the fly. This and many other differences follow from aforementioned three axes and are not distinguished as categorizing user models \cite{rich99}.  
+User models can be categorized in a three dimensional space where the axes are:  single model vs. collection of models, explicitly specified models vs. models inferred by the system on the basis of user behaviour and long-term vs. short-term user models \cite{rich99}. The dimensions are depicted in Figure \ref{dim_UM}. and the three dichtomies are explained further in this chapter. There are also other differences on user models like the model lifecycle; in a system where there is only a single model it can be permanently embedded with the system but in the case where there are models for each individual user the model is built on the fly. This and many other differences follow from aforementioned three axes and are not distinguished as categorizing user models \cite{rich99}.  
+
+\begin{figure}[htp] %y. t=top, h=here,b=bottom, p=separate page, !=place even if ugly
+\caption{The dimensions of user modeling.} \label{dim_UM}
+\includegraphics[scale=0.35]{figures/dimensions_UM.pdf} 
+\end{figure}
 
 The \textit{single model vs. collection of models} dichtomy \cite{rich99} has on it's other end the single model of single user. The single user is called the canonical user and is actually not a real person at all but a modelled stereotypical user of the system. Traditional user models have been constructed by collecting data on an average user on various tasks and environments \cite{rich99}. An example of a canonical user model is Fitt's law that suggests that the speed on which the user operates the machine can be increased by increasing the size of targets the user must hit. The major weakness of these kind of models is that they assume that all the users constitute a homogenous set. In most cases for the majority of users the system is better adapted to them that would be without any adaptation, but it isn't likely the best system that could be produced \cite{rich99}. In the other end of this dichtomy is the collection of models of individual users. These users are real and the facts to build the individual model are gathered usually from the interaction of the user with the system. When choosing whether to use a canonical or individual user models one should think if the canonical model is sufficient or is the user community too heterogenous for it to be useful enough \cite{rich99}. The decision on this axis influences the other aspects of user modeling. If one user model is used then it has to be designed only once and the system doesn't have to prepare for incorrect or conflicting user model information as the case is on the latter option. 
 
