@@ -185,7 +185,7 @@ Including adaptive elements in the user interface might increase the workload of
 
 (Kun tiedetään käyttäjästä jotain... jatketaan Solutions-kohtaan)
 
-In the following subsections we cover three different solutions that support exploratory search: faceted search, relevance feedback and query expansion.
+Search systems have evolved from simple "query to results" paradigm to a clever system that utilizes the user model to provide the user with better search results. Instead of providing results based on solely the search word, the search system can extend the search beyond the search word and, for example, include some synonyms in the query. Or the search system might recognize a common typo in the search query and replace the misspelled word with the correct one. The system might ask the user to rate the result of the search and then change accordingly. (faceted search jonnekin) In the following subsections we cover three different solutions that support exploratory search: faceted search, relevance feedback and query expansion.
 
 \subsection{Faceted search}
 
@@ -200,10 +200,28 @@ Exploratory search is a complex information seeking task and to support this it 
 
 - System examples
 \subsection{Relevance feedback}
-(also User Modeling) The goal of user modeling for a search system is to model a user's information need. The obvious source of information is the query. But as the queries tend to be quite short, especially when using a mobile device, the search words may not be a very accurate source of information for the user's information need. Much more data is available if user is given the opportunity to give feedback on the search results. This \emph{relevance feedback} has been found to improve retrieval accuracy \cite{salton90}. This, however, requires extra effort from the users and users are reluctant to make extra effort \cite{kelly03}. As \cite{shen05} shows, user action data can be used to improve the search results without the extra effort. They collected all the actions the user did and used them to update the user model. This user model was used in customizing the ranking which the results were based on.
+(also User Modeling) 
+
+The goal of user modeling for a search system is to model a user's information need. The obvious source of information is the query. But as the queries tend to be quite short, especially when using a mobile device, the search words may not be a very accurate source of information for the user's information need. Much more data is available if user is given the opportunity to give feedback on the search results. 
+
+It is a way to teach the system about user’s preferences. The user uses the explicit communications channel to give the system some information about the context. In practise, when a search result is shown to the user the system provides a way for user to respond if the result was sufficient or not. The user might rate the result, for example with stars to point out how successful the system was in finding the results for the user’s query. However, relevance feedback requires a system that incorporates and utilizes the given feedback and of course, it requires the user to use time and energy to evaluate the search result and how the result fills the need of the information retrieval task at hand. The extra effort has been shown to be too great a burden to users and thus relevance feedback is considered a scarce source for user model data.
+
+This \emph{relevance feedback} has been found to improve retrieval accuracy \cite{salton90}. This, however, requires extra effort from the users and users are reluctant to make extra effort \cite{kelly03}. As \cite{shen05} shows, user action data can be used to improve the search results without the extra effort. They collected all the actions the user did and used them to update the user model. This user model was used in customizing the ranking which the results were based on.
 - System examples
 \subsection{Query expansion}
 - System examples
+
+\subsection{Query Term Suggestion}
+
+Such search interfaces have appeared that suggest query terms dynamically, as the user enters them. In some of the systems the term suggestions appear before the searcher has seen any retrieval results, and in others, the system dynamically shows documents that match the characters typed so far, adjusting the results list as more characters are typed. Dynamic query term suggestions (sometimes referred to as auto-suggest, autosuggest, or search-as-you-type) are becoming a widely used solution between requiring the user to know exactly how to spell the query terms and to think of relevant and connected terms overall. [Hearst]
+
+Some dynamic term suggestion systems show only query suggestions whose prefix matches what has been typed so far. Figure X shows an example from Google’s dynamic query suggestions interface, which shows queries where the prefix matches some words used in previously used queries – in this example, “query sug” matches “query suggestion”. Dynamic query suggestions are not restricted to matching the prefix of the query alone.  (joku esimerkki) . 
+
+\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{One view of dynamic query term suggestions. An example from Google in which the prefix of a word in the query is matched against past queries. \protect.}   \label{querysuggestion}
+\includegraphics[scale=0.41]{figures/dynamicQueryTermSuggestion2.pdf} 
+\end{figure}
+
 
 \section{Discussion}
 In the Discussion chapter we summarize our findings and point out what is missing and what we expect from future research. 
