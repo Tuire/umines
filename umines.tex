@@ -1,5 +1,6 @@
 \documentclass{sigchi}
 
+\def\nimi{Supporting Exploratory Search with User Modeling}
 % Use this command to override the default ACM copyright statement (e.g. for preprints). 
 % Consult the conference website for the camera-ready copyright statement.
 \toappear{
@@ -41,7 +42,7 @@ Second draft
 % since its job is to redefine many LaTeX commands.
 \usepackage[pdftex]{hyperref}
 \hypersetup{
-pdftitle={User Modeling in Exploratory Search},
+pdftitle={\nimi},
 pdfauthor={LaTeX},
 pdfkeywords={SIGCHI, proceedings, archival format},
 bookmarksnumbered,
@@ -63,7 +64,7 @@ breaklinks=true,
 % End of preamble. Here it comes the document.
 \begin{document}
 
-\title{Supporting Exploratory Search in User Interface}
+\title{\nimi}
 
 \def\tktl{Department of Computer Science\\University of Helsinki}
 \def\tktladdr{P.O. Box 68 (Gustaf H\"allstr\"omin katu 2b)\\
@@ -85,19 +86,22 @@ FINLAND}
 \maketitle
 
 \begin{abstract}
-Here we'll describe the content of our essay.
+In this literature review we introduce exploratory search and cover three techniques that help the users in succeeding in their exploratory search tasks efficiently. Exploratory search is an information retrieval strategy that combines learning and investigation activities. We explain the concept of exploratory search and what distinguishes it from other information retrieval strategies. Exploratory searchers can be supported in their tasks by means of user modeling. After shortly summarizing user modeling we present three practical techniques that combine user modeling with exploratory search. 
+\textit{Faceted search} is a method where structured metadata is used to provide the user with an overview of the results and clickable categories. 
+\textit{Relevance feedback} provides the user an option to rate the usefulness of the result. This data is used to give better search results next time. 
+\textit{Query term suggestion} gives hints to the users while typing their query.
 \end{abstract}
 
 \keywords{
-Exploratory Search; Information Retrieval; User Modeling.
+Exploratory Search; 
+Information Retrieval;
+User Modeling.
+Faceted Search;
+Relevance Feedback;
+Query Term Suggestion;
 }
 
-\category{H.5.m.}{Information Interfaces and Presentation (e.g. HCI)}{Miscellaneous}
-
-
-\terms{
-Human Factors; Design; Measurement. 
-}
+\category{H.5.5.}{Information Interfaces and Presentation (e.g. HCI)}{Modeling}
 
 \section{Introduction}
 In this literature review we introduce the problem of exploratory search and some solutions for the problem. We cover three techniques that help the user in succeeding in his exploratory search task efficiently.
@@ -125,7 +129,13 @@ The Conclusion chapter summarizes our findings.
 \subsection{Exploratory Search}
 (Ilkka)
 
-Introduction to exploratory search.
+\begin{figure*}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{3 clouds} \label{figure_3clouds}
+\centering
+\includegraphics[scale=1.5]{figures/3clouds.pdf}
+\end{figure*}
+
+Introduction to exploratory search. See Figure \ref{figure_3clouds}.
 \cite{march06}, \cite{white09}, \cite{tvaro11}
 
 %% Palstan leveys tuntuu olevan n. 245pt
