@@ -208,20 +208,50 @@ It is a way to teach the system about user’s preferences. The user uses the ex
 
 This \emph{relevance feedback} has been found to improve retrieval accuracy \cite{salton90}. This, however, requires extra effort from the users and users are reluctant to make extra effort \cite{kelly03}. As \cite{shen05} shows, user action data can be used to improve the search results without the extra effort. They collected all the actions the user did and used them to update the user model. This user model was used in customizing the ranking which the results were based on.
 - System examples
+
+An example of relevance feedback in practise is demonstrated in Figure \ref{figure_relevanceFeedback1}. The search system at dell.com displays a form at the end of the result list. The user is thanked if the form is submitted and a promise "We will use your feedback to improve search on dell.com" is displayed to the user. Choosing the "Write and Tell Us More" link extends the form (Figure \ref{figure_relevanceFeedback2}) to include a text field to further explain the feedback. Similar examples of relevance feedback have been reported by (viitteet).
+
+\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Relevance feedback \protect} \label{figure_relevanceFeedback1}
+\includegraphics[scale=0.28]{figures/relevanceFeedback1.pdf} 
+\end{figure}
+
+\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Relevance feedback \protect} \label{figure_relevanceFeedback2}
+\includegraphics[scale=0.70]{figures/relevanceFeedback2.pdf} 
+\end{figure}
+
 \subsection{Query expansion}
 - System examples
 
 \subsection{Query Term Suggestion}
 
-Such search interfaces have appeared that suggest query terms dynamically, as the user enters them. In some of the systems the term suggestions appear before the searcher has seen any retrieval results, and in others, the system dynamically shows documents that match the characters typed so far, adjusting the results list as more characters are typed. Dynamic query term suggestions (sometimes referred to as auto-suggest, autosuggest, or search-as-you-type) are becoming a widely used solution between requiring the user to know exactly how to spell the query terms and to think of relevant and connected terms overall. [Hearst]
+Such search interfaces have appeared that suggest query terms dynamically, as the user enters them. In some of the systems the term suggestions appear before the searcher has seen any retrieval results, and in others, the system dynamically shows documents that match the characters typed so far, adjusting the results list as more characters are typed. 
 
-Some dynamic term suggestion systems show only query suggestions whose prefix matches what has been typed so far. Figure X shows an example from Google’s dynamic query suggestions interface, which shows queries where the prefix matches some words used in previously used queries – in this example, “query sug” matches “query suggestion”. Dynamic query suggestions are not restricted to matching the prefix of the query alone.  (joku esimerkki) . 
+Dynamic query term suggestions (sometimes referred to as auto-suggest, autosuggest, or search-as-you-type) are becoming a widely used solution between requiring the user to know exactly how to spell the query terms and to think of relevant and connected terms overall. [Hearst]
 
 \begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
-\caption{One view of dynamic query term suggestions. An example from Google in which the prefix of a word in the query is matched against past queries. \protect.}   \label{querysuggestion}
+\caption{One view of dynamic query term suggestion. An example from Google in which the prefix of a word in the query is matched against past queries. \protect.} \label{figure_querysuggestion2}
 \includegraphics[scale=0.41]{figures/dynamicQueryTermSuggestion2.pdf} 
 \end{figure}
 
+Some dynamic term suggestion systems show only query suggestions whose prefix matches what has been typed so far. Figure \ref{figure_querysuggestion2} shows an example from Google's dynamic query suggestions interface, which shows queries where the prefix matches some words used in previously used queries. In this example, "query sug" matches "query suggestion". Dynamic query suggestions are not restricted to matching the prefix of the query alone. In Figure \ref{figure_querysuggestion3} the system detects an upcoming spelling error in user's query term "exansion" and suggests a query with a corrected term "expansion". 
+\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Another view of dynamic query term suggestion in Google where the system detects an upcoming spelling error "exansion" and suggests a query including a corrected word, "expansion" . An example from Google in which the prefix of a word in the query is matched against past queries. \protect.} \label{figure_querysuggestion3}
+\includegraphics[scale=0.41]{figures/dynamicQueryTermSuggestion3.pdf} 
+\end{figure}
+
+A less interactive system is displayed in Figure \ref{figure_queryExpansion2a}. The search system does not suggest any query terms and a user's misspelled query fails. However, as we see in Figure \ref{figure_queryExpansion2b}, only seconds after the initial use of the word "morgage" the word is used again and spelled exactly the same, but the result page has changed. This helps user in a similar way as the interactive query suggestion method, but the first use of a word launches a background operation to handle future cases. The user model of the search system gets updated and after the initial use of the word "morgage" the system will provide a suggestion in the otherwise empty result page (Figure \ref{figure_queryExpansion2b}).
+\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Initial use of misspelled query term in Ipswich Borough Counsil website search system results in a page without suggestions.
+\protect} \label{figure_queryExpansion2a}
+\includegraphics[scale=0.41]{figures/queryExpansion2a.pdf} 
+\end{figure}
+
+\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Only seconds after the initial use of misspelled "morgage" query term in Ipswich Borough Counsil website search system, the system offers a suggestion of term "mortgage".\protect} \label{figure_queryExpansion2b}
+\includegraphics[scale=0.41]{figures/queryExpansion2b.pdf} 
+\end{figure}
 
 \section{Discussion}
 In the Discussion chapter we summarize our findings and point out what is missing and what we expect from future research. 
