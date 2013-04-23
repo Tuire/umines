@@ -1,0 +1,146 @@
+\documentclass{sigchi}
+
+\def\nimi{Supporting Exploratory Search with User Modeling}
+
+% Use this command to override the default ACM copyright statement (e.g. for preprints). 
+% Consult the conference website for the camera-ready copyright statement.
+\toappear{
+
+% Submitted for review.
+}
+
+% Arabic page numbers for submission. 
+% Remove this line to eliminate page numbers for the camera ready copy
+\pagenumbering{arabic}
+% Load basic packages
+\usepackage{balance}  % to better equalize the last page
+%\usepackage{graphics} % for EPS, load graphicx instead
+\usepackage{graphicx}
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+
+
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, 
+% to give it a fighting chance of not being over-written, 
+% since its job is to redefine many LaTeX commands.
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+pdftitle={\nimi},
+pdfauthor={LaTeX},
+pdfkeywords={SIGCHI, proceedings, archival format},
+bookmarksnumbered,
+pdfstartview={FitH},
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black,
+breaklinks=true,
+}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+% create a shortcut to typeset table headings
+\newcommand\tabhead[1]{\small\textbf{#1}}
+
+
+% End of preamble. Here it comes the document.
+\begin{document}
+
+\title{\nimi}
+
+\def\tktl{Department of Computer Science\\University of Helsinki}
+\def\tktladdr{P.O. Box 68 (Gustaf H\"allstr\"omin katu 2b)\\
+FI-00014 UNIVERSITY OF HELSINKI\\
+FINLAND}
+
+\numberofauthors{2}
+\author{
+  \alignauthor Ilkka Kiistala\\
+    \affaddr{\tktl}\\
+    % \affaddr{\tktladdr}\\
+    \email{ilkka.kiistala@helsinki.fi}
+  \alignauthor Tuire Peurala\\
+    \affaddr{\tktl}\\
+    % \affaddr{\tktladdr}\\
+    \email{tuire.peurala@helsinki.fi}
+}
+
+\maketitle
+
+\begin{abstract}
+In this literature review we introduce exploratory search and cover three techniques that help the users in succeeding in their exploratory search tasks efficiently. Exploratory search is an information retrieval strategy that combines learning and investigation activities. We explain the concept of exploratory search and what distinguishes it from other information retrieval strategies. Exploratory searchers can be supported in their tasks by means of user modeling. After shortly summarizing user modeling we present three practical techniques that combine user modeling with exploratory search. 
+\textit{Faceted search} is a method where structured metadata is used to provide the user with an overview of the results and clickable categories. 
+\textit{Relevance feedback} provides the user an option to rate the usefulness of the result. This data is used to give better search results next time. 
+\textit{Query term suggestion} gives hints to the users while typing their query.
+\end{abstract}
+
+\section{Discussion}
+
+In the modern day people use online search applications widely. Actually search applications are the second most frequently used online applications [kirja]. Online environment seems to be perfect for both searching  fast lookup information and doing more sophisticated searching with goals like investigating, forming overall understanding of a given subject or trying to learn uncharted territories. People's online lives may include anything from finding the perfect companion or seeing Psy's next tremendous viral hit video to learning the basics of physics.  Built on the idea of hyperlinking the internet is practically made for exploring. Exploratory search tasks have become part of everyday life, maybe also because the internet has applications that support it better than the traditional library, books and conversation approach.
+
+Exploratory searchers can be supported in their tasks by means of user modeling, the goal being to accurately model the users' information needs. This task is unfortunately a very difficult one. Indeed, it is hard for users themselves to precisely describe what their information need eventually even is. 
+
+The user interface of an exploratory search system should be designed to fulfill the needs of most of its users. 
+More information on what works and doesn't work can usually be collected from system evaluations.
+However, evaluating exploratory search systems is difficult, because users have different starting positions [].
+Their knowledge of the domain varies, they are interested in different aspects of the topic and they have previously encountered different information.
+The solutions that aid exploratory search usually include methods to recommend alternative search paths or methods to suggest sources of related information. 
+
+Faceted search has been found to be a useful means of supporting exploratory search. It supports the refining of the query and enables browsing through the formed categories thus enriching the understanding of the knowledge domain. Additionally, the faceted search helps the users to refine or re-evaluate their information needs. Still, even though faceted search interfaces make the search more efficient and the users explore the results more broadly than without facets, they don't always prefer it. 
+
+Another supporting technique that we came upon was query term suggestion. It saves the user from typing as the system suggests combinations of query terms based on the characters or words the user has already typed in the search form. A study suggests that as much as 15 percent of search queries return no results because of misspelled query terms. By clicking a suggested search query, the search gets underway with correctly spelled words and with a certainty that some results will be returned, since the suggested query has successfully been used before.
+
+Most search systems rely only on the query the user has submitted when constructing a user model, but more direct ways to gather information exist, too. Asking user to rate the result based on their usefulness provides the system with direct and precise evidence. Relevance feedback has been found effective in enhancing search accuracy [], but this method requires system to analyse given feedback and apply it into the ranking the search results. In practise, the extra effort the user needs to make seems to be too much for the users.
+
+In our opinion using user models in supporting exploratory search has some payoffs. The user might feel insecure if the application forms search results for reasons the user does not understand, depriving the user's control of the system. User modeling also has privacy implications. Who stores the information that has been gathered from the user's interactions? How securely it is stored and who controls the purposes it is used for? For example, Google collects information about the user's actions and uses them to construct user model for marketing purposes. The privacy of using the data is questionable and they provide no means of preventing them from collecting one's interaction data. 
+
+The methods we encountered during our literature review were familiar to us as major search engines have incorporated them in their user interfaces granted that we didn't know their names, let alone their theoretical background. It is obvious to us that the solutions described in our paper are useful to many exploratory searchers although not all of the implementations we tried were adequately intuitive or mature enough in their visualization.
+
+\nocite{} %tämä listaa kaikki viitteet luetteloon vaikka niitä ei olisi vielä viitattu
+
+% Balancing columns in a ref list is a bit of a pain because you
+% either use a hack like flushend or balance, or manually insert
+% a column break.  http://www.tex.ac.uk/cgi-bin/texfaq2html?label=balance
+% multicols doesn't work because we're already in two-column mode,
+% and flushend isn't awesome, so I choose balance.  See this
+% for more info: http://cs.brown.edu/system/software/latex/doc/balance.pdf
+%
+% Note that in a perfect world balance wants to be in the first
+% column of the last page.
+%
+% If balance doesn't work for you, you can remove that and
+% hard-code a column break into the bbl file right before you
+% submit:
+%
+% http://stackoverflow.com/questions/2149854/how-to-manually-equalize-columns-
+% in-an-ieee-paper-if-using-bibtex
+%
+% Or, just remove \balance and give up on balancing the last page.
+%
+\balance
+
+% If you want to use smaller typesetting for the reference list,
+% uncomment the following line:
+% \small
+\bibliographystyle{acm-sigchi}
+\bibliography{umines}
+\end{document}

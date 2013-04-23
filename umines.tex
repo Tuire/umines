@@ -206,7 +206,7 @@ The article summarizes related study on faceted search and exploratory search an
 
 Exploratory search is a complex information seeking task and to support this it has become accepted to use faceted search or categorized overviews \cite{kules09}. Structured metadata is used to provide the user with an overview of the results and clickable categories. With this UI approach the user doesn't have to reformulate the query to narrow and browse the results. Faceted search is used in practice in library catalogs, web search, online shopping and other domains \cite{kules09}. Faceted search enables the user to change fluidly between search and browsing and searchers with partially defined or changing information needs can use the overview to understand the knowledge domain and refine their needs. It has been shown that when using faceted search the users explored their results more broadly than without facets and felt more organized about their searches. Still though the faceted search interfaces make the search more efficient the subjects don't always prefer it \cite{kules09}. 
 
-\cite{shen05}The writers have developed a client-side web search agent to work on top of google and they claim it improves the accuracy of the results. In information retrieval the user model/information need is “traditionally” (2005) constructed only by the query keywords and improved by relevance feedback where the user is asked to implicitly specify which of the results are relevant. As the users are usually reluctant in doing this, the writers have developed an implicit model for improving the search user model. Usually user models are long-lived but this model is concentrated on short-term context. The search agent tries to respond to a situation where a user would need different results for searching with keyword “Java” after searching programming stuff or after the user has been searching beaches in Indonesia. Two challenges for information retrieval systems are identified: 1. different users may use the exactly same keywords to look for different things and 2. the information needs of a user may change over time. In their search agent the writers gather information from two sources; the previous query keywords and the viewed document summaries. The system responds immediately to each user action with a system action and the user doesn’t have to actively take part on adapting the search result to be more relevant.
+\cite{shen05}The writers have developed a client-side web search agent to work on top of google and they claim it improves the accuracy of the results. In information retrieval the user model/information need is “traditionally” (2005) constructed only by the query keywords and improved by relevance feedback where the user is asked to implicitly specify which of the results are relevant. As the users are usually reluctant in doing this, the writers have developed an implicit model for improving the search user model. Usually user models are long-lived but this model is concentrated on short-term context. The search agent tries to respond to a situation where a user would need different results for searching with keyword “Java” after searching programming stuff or after the user has been searching beaches in Indonesia. Two challenges for information retrieval systems are identified: 1. different users may use the exactly same keywords to look for different things and 2. the information needs of a user may change over time. In their search agent the writers gather information from two sources; the previous query keywords and the viewed document summaries. The system responds immediately to each user action with a system action and the user doesn't have to actively take part on adapting the search result to be more relevant.
 
 - System examples
 \subsection{Relevance feedback}
@@ -214,7 +214,7 @@ Exploratory search is a complex information seeking task and to support this it 
 
 The goal of user modeling for a search system is to model a user's information need. The obvious source of information is the query. But as the queries tend to be quite short, especially when using a mobile device, the search words may not be a very accurate source of information for the user's information need. Much more data is available if user is given the opportunity to give feedback on the search results. 
 
-It is a way to teach the system about user’s preferences. The user uses the explicit communications channel to give the system some information about the context. In practise, when a search result is shown to the user the system provides a way for user to respond if the result was sufficient or not. The user might rate the result, for example with stars to point out how successful the system was in finding the results for the user’s query. However, relevance feedback requires a system that incorporates and utilizes the given feedback and of course, it requires the user to use time and energy to evaluate the search result and how the result fills the need of the information retrieval task at hand. The extra effort has been shown to be too great a burden to users and thus relevance feedback is considered a scarce source for user model data.
+It is a way to teach the system about user's preferences. The user uses the explicit communications channel to give the system some information about the context. In practise, when a search result is shown to the user the system provides a way for user to respond if the result was sufficient or not. The user might rate the result, for example with stars to point out how successful the system was in finding the results for the user's query. However, relevance feedback requires a system that incorporates and utilizes the given feedback and of course, it requires the user to use time and energy to evaluate the search result and how the result fills the need of the information retrieval task at hand. The extra effort has been shown to be too great a burden to users and thus relevance feedback is considered a scarce source for user model data.
 
 This \emph{relevance feedback} has been found to improve retrieval accuracy \cite{salton90}. This, however, requires extra effort from the users and users are reluctant to make extra effort \cite{kelly03}. As \cite{shen05} shows, user action data can be used to improve the search results without the extra effort. They collected all the actions the user did and used them to update the user model. This user model was used in customizing the ranking which the results were based on.
 - System examples
@@ -251,19 +251,44 @@ Some dynamic term suggestion systems show only query suggestions whose prefix ma
 \includegraphics[scale=0.41]{figures/dynamicQueryTermSuggestion3.pdf} 
 \end{figure}
 
-A less interactive system is displayed in Figure \ref{figure_queryExpansion2a}. The search system does not suggest any query terms and a user's misspelled query fails. However, as we see in Figure \ref{figure_queryExpansion2b}, only seconds after the initial use of the word "morgage" the word is used again and spelled exactly the same, but the result page has changed. This helps user in a similar way as the interactive query suggestion method, but the first use of a word launches a background operation to handle future cases. The user model of the search system gets updated and after the initial use of the word "morgage" the system will provide a suggestion in the otherwise empty result page (Figure \ref{figure_queryExpansion2b}).
-\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
-\caption{Initial use of misspelled query term in Ipswich Borough Counsil website search system results in a page without suggestions.
-\protect} \label{figure_queryExpansion2a}
-\includegraphics[scale=0.41]{figures/queryExpansion2a.pdf} 
-\end{figure}
+A less interactive system is displayed in Figure \ref{figure_queryExpansion3}.
+The search system does not suggest any query terms and a user's misspelled query fails.
+However, as we see on the right part of the figure, just seconds after the initial use of the word "morgage" the word is used again and spelled exactly the same, but the result page has changed.
+This helps user in a similar way as the interactive query suggestion method, but the first use of a word launches a background operation to handle future cases.
+The user model of the search system gets updated and after the initial use of the word "morgage" the system will provide a suggestion in the otherwise empty result page.
 
-\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
-\caption{Only seconds after the initial use of misspelled "morgage" query term in Ipswich Borough Counsil website search system, the system offers a suggestion of term "mortgage".\protect} \label{figure_queryExpansion2b}
-\includegraphics[scale=0.41]{figures/queryExpansion2b.pdf} 
-\end{figure}
+\begin{figure*}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Initial use of misspelled query term in Ipswich Borough Counsil website search system results in a page without suggestions (left).
+Just seconds following the initial use of misspelled "morgage" query term, we resubmit the query as before and as we see on the right, the system offers "mortgage" as a suggestion.
+\protect} \label{figure_queryExpansion3}
+\centering
+\includegraphics[scale=0.41]{figures/queryExpansion3.pdf} 
+\end{figure*}
 
 \section{Discussion}
+
+In the modern day people use online search applications widely. Actually search applications are the second most frequently used online applications[kirja]. Online environment seems to be perfect for both searching  fast lookup information and doing more sophisticated searching with goals like investigating, forming overall understanding of a given subject or trying to learn uncharted territories. People's online lives may include anything from finding the perfect companion or seeing Psy's next tremendous viral hit video to learning the basics of physics.  Built on the idea of hyperlinking the internet is practically made for exploring. Exploratory search tasks have become part of everyday life, maybe also because the internet has applications that support it better than the traditional library, books and conversation approach.
+
+Exploratory searchers can be supported in their tasks by means of user modeling, the goal being to accurately model the users' information needs. This task is unfortunately a very difficult one. Indeed, it is hard for users themselves to precisely describe what their information need eventually even is. 
+
+The user interface of an exploratory search system should be designed to fulfill the needs of most of its users. 
+More information on what works and doesn't work can usually be collected from system evaluations.
+However, evaluating exploratory search systems is difficult, because users have different starting positions [13].
+Their knowledge of the domain varies, they are interested in different aspects of the topic and they have previously encountered different information.
+The solutions that aid exploratory search usually include methods to recommend alternative search paths or methods to suggest sources of related information. 
+
+Faceted search has been found to be a useful means of supporting exploratory search. It supports the refining of the query and enables browsing through the formed categories thus enriching the understanding of the knowledge domain. Additionally, the faceted search helps the users to refine or re-evaluate their information needs. Still, even though faceted search interfaces make the search more efficient and the users explore the results more broadly than without facets, they don't always prefer it. 
+
+Another supporting technique that we came upon was query term suggestion. It saves the user from typing as the system suggests combinations of query terms based on the characters or words the user has already typed in the search form. A study suggests that as much as 15 percent of search queries return no results because of misspelled query terms. By clicking a suggested search query, the search gets underway with correctly spelled words and with a certainty that some results will be returned, since the suggested query has successfully been used before.
+
+Most search systems rely only on the query the user has submitted when constructing a user model, but more direct ways to gather information exist, too. Asking user to rate the result based on their usefulness provides the system with direct and precise evidence. Relevance feedback has been found effective in enhancing search accuracy [], but this method requires system to analyse given feedback and apply it into the ranking the search results. In practise, the extra effort the user needs to make seems to be too much for the users.
+
+In our opinion using user models in supporting exploratory search has some payoffs. The user might feel insecure if the application forms search results for reasons the user does not understand, depriving the user's control of the system. User modeling also has privacy implications. Who stores the information that has been gathered from the user's interactions? How securely it is stored and who controls the purposes it is used for? For example, Google collects information about the user's actions and uses them to construct user model for marketing purposes. The privacy of using the data is questionable and they provide no means of preventing them from collecting one's interaction data. 
+
+The methods we encountered during our literature review were familiar to us as major search engines have incorporated them in their user interfaces granted that we didn't know their names, let alone their theoretical background. It is obvious to us that the solutions described in our paper are useful to many exploratory searchers although not all of the implementations we tried were adequately intuitive or mature enough in their visualization.
+
+()
+
 In the Discussion chapter we summarize our findings and point out what is missing and what we expect from future research. 
 
 Future challenges for user modeling : payoff, user modeling vs. task modeling, wrong/outdated info, adequacy of models, larger context, user's loss of control, privacy concerns \cite{fischer01}.
