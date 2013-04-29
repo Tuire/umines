@@ -6,7 +6,7 @@
 % Use this command to override the default ACM copyright statement (e.g. for preprints). 
 % Consult the conference website for the camera-ready copyright statement.
 \toappear{
-Third draft
+Fourth draft
 % Submitted for review.
 }
 
@@ -20,6 +20,7 @@ Third draft
 \usepackage{times}    % comment if you want LaTeX's default font
 \usepackage{url}      % llt: nicely formatted URLs
 
+\usepackage{csquotes}
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -108,10 +109,28 @@ To build a good system where machine and a human cooperate to perform a task it 
 
 In reality often the users vary so much that a traditional user model is insufficient and there is a need for a user model of an individual.
 
-Define ES
+Information retrieval tasks the users do are different, and it has been shown that there are different types of searching []. We dive into the exploratory search which has its properties that distinguish it from other searching types. We adopt the description of exploratory search by Marchionini: 
 
+\blockquote{Exploratory search can be used to describe an information-seeking problem context that is open-ended, persistent, and multi-faceted; 
+and to describe information-seeking processes that are opportunistic, iterative, and multi-tactical. 
+In the first sense, exploratory search is commonly used in scientific discovery, learning, and decision-making contexts. 
+In the second sense, exploratory tactics are used in all manner of information seeking and reflect seeker preferences and experience as much as the goal \cite{march06}.}
+
+An exploratory search task is not a well-defined task that the user stops after finding an answer to a question. 
+Instead, as the searcher is not after a specific fact, the search process is iterative and the user might return to the task several times and in several sessions.
+The time gap between the sessions means the user is easily distracted or lead to different paths, since they have lost the 'flow' they had in the previous search session []. 
+Having lost the flow, their (motivation is weak, easily distracted, open to new ideas) and the overall search goal may get redefined.
+The nature of an exploratory search is (hard-to-define). Supporting such a process is challenging, because the tactics and preferences vary.
+Although the evaluation of exploratory search user interfaces has been proven to be difficult [], some design guidelines have been proposed and some solutions have been found to help users in their exploratory search tasks.
+
+To this (literature review/lecture/essay) we chose three solutions that are seen in search systems in general, but these solutions can be enhanced further by (taking advantage of) user modeling. 
+The chosen solutions were (chosen), because 1) they take place in different stages of the search process, 2) their use of user modeling differs, and 3) the reward the user (gets is different).
+While presenting the solutions, these (differences) are explained. In addition, we describe how an exploratory search process benefits from use of user modeling in these three solutions.
+
+(move this?)
 \cite{van08}: 
 In order to accomodate to differing needs of users or usergroups over time, a system may use one of three basic approaches. System is called adaptive if it alters it structure, functionality or interface on the basis of a user model generated from \textit{implicit} user input. Adaptable systems use \textit{explicit user input} and need user's active participation. Personalized system is a hybrid of the two aforementioned.
+
 
 In the following chapter we introduce basic concepts, solutions and systems that we found exploring the literature. 
 In the Discussion chapter we summarize our findings and point out what is missing and what we expect from future research. 
