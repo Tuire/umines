@@ -191,15 +191,13 @@ Search systems have evolved from simple "query to results" paradigm to a clever 
 
 Information seekers often express a desire for a user interface that organizes search results into meaningful groups, in order to help make sense of the results and to help decide what to do next \cite{hearst06}. Exploratory search is a complex information seeking task and to support this it has become accepted to use faceted search or categorized overviews \cite{kules09}. In faceted search structured metadata is used to provide the user with an overview of the results and clickable categories. There are two ways of grouping search results; clustering and hierarchical faceted categories. Clustering is grouping of items based on some similarity and is fully automated process. It is good for clarifying a vague query but the clustering algorithms aren't yet perfect and the clustering can be unpredicted \cite{hearst06}. Category system is a set of labels that are organized to mirror the domain. Hierarchical faceted categories are a set of hierarchical categories that each represent a different dimension. Categories are usually created manually but can be partly automated. Traditional categories place a document inside single category but facets allow document to exist simultaneously in multiple overlapping taxonomies \cite{koren08}. Faceted interfaces have three characteristics; they present a number of facets and facet values, query can be interactively refined via the facets and users can remove previously selected facets \cite{koren08}. 
 
-\begin{figure*}[ht!] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+An example of faceted search interface can be seen on Figure \ref{flamenco}. The user interface in the figure is an experimental implementation of faceted search called Flamenco and it can be found on \textit{http://flamenco.berkeley.edu/demos.html}. This version of Flamenco can be used to find Nobel Prize winners by querying and by clicking through cathegories. The faceted categories are depicted in enlargement 2 in the Figure \ref{flamenco}. The facets in the figure are gender, country and affiliation etc. And the facet values for example in the country facet are Hungary, United Kingdom and United States. An interesting problem is to choose what facets and facet values to present to the user at any one time but this hasn't been researched much \cite{koren08}. In a larger document domain selecting the facets and values to show gets problematic. One approach would be to show the user all the facets and facet values but the information may easily overwhelm the user \cite{koren08}. Flamenco plainly shows the first few facet values in alphabetical order. Most systems solve this problem by manually selecting few facets and values to show to all users. However, manually formed interface may be too labourious to maintain and secondly the pre-defined interface may not serve all the users adequately in the first place \cite{koren08}.  
+\begin{figure*}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
 \caption{ Faceted Search: Flamenco system} \label{flamenco}
 \centering
 \vspace{5pt}
 \includegraphics[scale=0.28]{figures/flamenco.pdf} 
 \end{figure*}
-
-An example of faceted search interface can be seen on Figure \ref{flamenco}. The user interface in the figure is an experimental implementation of faceted search called Flamenco and it can be found on \textit{http://flamenco.berkeley.edu/demos.html}. This version of Flamenco can be used to find Nobel Prize winners by querying and by clicking through cathegories. The faceted categories are depicted in enlargement 2 in the Figure \ref{flamenco}. The facets in the figure are gender, country and affiliation etc. And the facet values for example in the country facet are Hungary, United Kingdom and United States. An interesting problem is to choose what facets and facet values to present to the user at any one time but this hasn't been researched much \cite{koren08}. In a larger document domain selecting the facets and values to show gets problematic. One approach would be to show the user all the facets and facet values but the information may easily overwhelm the user \cite{koren08}. Flamenco plainly shows the first few facet values in alphabetical order. Most systems solve this problem by manually selecting few facets and values to show to all users. However, manually formed interface may be too labourious to maintain and secondly the pre-defined interface may not serve all the users adequately in the first place \cite{koren08}.  
-
 
 With faceted search UI approach the user doesn't have to reformulate the query to narrow down and browse the results. Faceted search is used in practice in library catalogs, web search, e-commerce and other domains \cite{kules09}, \cite{koren08}. Faceted search enables the user to change fluidly between search and browsing and searchers with partially defined or changing information needs can use the overview to understand the knowledge domain and refine their needs. It has been shown that when using faceted search the users explored their results more broadly than without facets and felt more organized about their searches. Still though the faceted search interfaces make searching more efficient the users don't always prefer using it \cite{kules09}. In an experiment conducted with an eyetracker \cite{kules09}, researchers found out that users looked a lot at the facets while performing an exploratory search task. 47,4\% of the eye movement was between facets, breadcrums summarizing the selected facets and the result list. In an interview the users told they used facets to help organize their view on the topic domain and select sub-topics for further investigation. Of these results it can be deduced that the facets played an important role in the exploratory search process. 
 
@@ -211,6 +209,11 @@ The obvious source of information is the query.
 But as the queries tend to be quite short, especially when using a mobile device, the search words may not be a very accurate source of information for the user's information need.
 Much more data is available if user is given the opportunity to give feedback on the search results.
 
+\begin{figure}[h] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Relevance feedback in action at http://www.dell.com. After a query, a feedback form is displayed below the search results.\protect} \label{figure_relevanceFeedback1}
+\includegraphics[scale=0.28]{figures/relevanceFeedback1.pdf} 
+\end{figure}
+
 It is a way to teach the system about user's preferences.
 The user uses the explicit communications channel to give the system some information about the context.
 In practise, when a search result is shown to the user the system provides a way for user to respond if the result was sufficient or not.
@@ -218,23 +221,18 @@ The user might rate the result, for example with stars to point out how successf
 However, relevance feedback requires a system that incorporates and utilizes the given feedback and more notably, it requires the user to use time and energy to evaluate the search result and how the result fills the need of the information retrieval task at hand.
 The extra effort has been shown to be too great a burden to users and thus relevance feedback is considered a scarce source for user model data.
 
+\begin{figure}[h] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\caption{Relevance feedback form at http://www.dell.com that has a text field for explaining the feedback further.\protect} \label{figure_relevanceFeedback2}
+\includegraphics[scale=0.70]{figures/relevanceFeedback2.pdf} 
+\end{figure}
+
 This \emph{relevance feedback} has been found to improve retrieval accuracy \cite{salton90}. This, however, requires extra effort from the users and users are reluctant to make extra effort \cite{kelly03}. As \cite{shen05} shows, user action data can be used to improve the search results without the extra effort. They collected all the actions the user did and used them to update the user model. This user model was used in customizing the ranking which the results were based on.
 
 An example of relevance feedback in practise is demonstrated in Figure \ref{figure_relevanceFeedback1}.
-The search system at dell.com displays a form at the end of the result list.
+The search system at http://www.dell.com displays a form at the end of the result list.
 The user is thanked if the form is submitted and a promise "We will use your feedback to improve search on dell.com" is displayed to the user.
 Choosing the "Write and Tell Us More" link extends the form (Figure \ref{figure_relevanceFeedback2}) to include a text field to further explain the feedback.
 Similar examples of relevance feedback have been reported by e.g. \cite{salton90}.
-
-\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
-\caption{Relevance feedback in action at dell.com. After a query, a feedback form is displayed below the search results.\protect} \label{figure_relevanceFeedback1}
-\includegraphics[scale=0.28]{figures/relevanceFeedback1.pdf} 
-\end{figure}
-
-\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
-\caption{Relevance feedback form at dell.com that has a text field for explaining the feedback further.\protect} \label{figure_relevanceFeedback2}
-\includegraphics[scale=0.70]{figures/relevanceFeedback2.pdf} 
-\end{figure}
 
 \subsection{Query Term Suggestion}
 
@@ -242,7 +240,7 @@ Such search interfaces have appeared that suggest query terms dynamically, as th
 In some of the systems the term suggestions appear before the searcher has seen any retrieval results, and in others, the system dynamically shows documents that match the characters typed so far, adjusting the results list as more characters are typed.
 Dynamic query term suggestions (sometimes referred to as auto-suggest, autosuggest, or search-as-you-type) are becoming a widely used solution between requiring the user to know exactly how to spell the query terms and to think of relevant and connected terms in context.
 
-\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\begin{figure}[h] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
 \caption{One view of dynamic query term suggestion. An example from Google in which the prefix of a word in the query is matched against past queries. \protect.} \label{figure_querysuggestion2}
 \includegraphics[scale=0.41]{figures/dynamicQueryTermSuggestion2.pdf} 
 \end{figure}
@@ -252,7 +250,7 @@ In this example, "query sug" matches "query suggestion".
 Dynamic query suggestions are not restricted to matching the prefix of the query alone.
 In Figure \ref{figure_querysuggestion3} the system detects an upcoming spelling error in user's query term "exansion" and suggests a query with a corrected term "expansion".
 
-\begin{figure}[htp] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
+\begin{figure}[h] % t=top, h=here, b=bottom, p=separate page, !=place even if ugly
 \caption{Another view of dynamic query term suggestion in Google where the system detects an upcoming spelling error "exansion" and suggests a query including a corrected word, "expansion". \protect} \label{figure_querysuggestion3}
 \includegraphics[scale=0.41]{figures/dynamicQueryTermSuggestion3.pdf} 
 \end{figure}
