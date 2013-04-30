@@ -102,39 +102,28 @@ Query Term Suggestion;
 \category{H.5.5.}{Information Interfaces and Presentation (e.g. HCI)}{Modeling}
 
 \section{Introduction}
-In this literature review we introduce the problem of exploratory search and some solutions for the problem. We cover three techniques that help the user in succeeding in his exploratory search task efficiently.
-We explain what exploratory search is and what distinguishes it from other information retrieval tasks. 
-
-To build a good system where machine and a human cooperate to perform a task it is important to take into account some significant characteristics of people \cite{rich99}. User model is built of these characteristics and traditionally it has been a model of a typical user \cite{rich99}. 
-
-In reality often the users vary so much that a traditional user model is insufficient and there is a need for a user model of an individual.
-
-Information retrieval tasks the users do are different, and it has been shown that there are different types of searching []. We dive into the exploratory search which has its properties that distinguish it from other searching types. We adopt the description of exploratory search by Marchionini: 
+Introduction
+A modern day (citizen) lives in an information-rich world. Information is available to people at any time at any place and in any form and this may lead to information overload. The information needs vary by the task-at-hand, the user and the context. There is a growing need to somehow prefilter and narrow down the knowledge domain to make it possible to succeed in demanding and ambiguous information-seeking tasks. Information retrieval tasks the users execute are different, and it has been shown that there are different categories of searching []. In this literature review we (introduce) exploratory search and how a system can help users to fulfill their needs. We adopt the description of exploratory search by Marchionini: 
 
 \blockquote{Exploratory search can be used to describe an information-seeking problem context that is open-ended, persistent, and multi-faceted; 
 and to describe information-seeking processes that are opportunistic, iterative, and multi-tactical. 
 In the first sense, exploratory search is commonly used in scientific discovery, learning, and decision-making contexts. 
 In the second sense, exploratory tactics are used in all manner of information seeking and reflect seeker preferences and experience as much as the goal \cite{march06}.}
 
-An exploratory search task is not a well-defined task that the user stops after finding an answer to a question. 
-Instead, as the searcher is not after a specific fact, the search process is iterative and the user might return to the task several times and in several sessions.
-The time gap between the sessions means the user is easily distracted or lead to different paths, since they have lost the 'flow' they had in the previous search session []. 
-Having lost the flow, their (motivation is weak, easily distracted, open to new ideas) and the overall search goal may get redefined.
-The nature of an exploratory search is (hard-to-define). Supporting such a process is challenging, because the tactics and preferences vary.
-Although the evaluation of exploratory search user interfaces has been proven to be difficult [], some design guidelines have been proposed and some solutions have been found to help users in their exploratory search tasks.
+An exploratory search task differs notably from a search task with a well-defined objective in which the user stops after finding an answer to a question. The searchers are possibly exploring a domain where they have a general interest but no specific knowledge. As the searcher is not after a specific fact, the search process is iterative, accumulating insight, and the user might return to the task several times and possibly in several sessions making the task persistent.  It is characteristic for exploratory search to include stages where user redefines the goal and may find new direction in their search task as their understanding grows. The means of exploring may include multiple applications and information sources.
+The nature of an exploratory search is that the information need is broad. Supporting this sort of constantly evolving and opportunistic approach is challenging, because the tactics and preferences vary. Although the evaluation of exploratory search user interfaces has been proven to be difficult [], some design guidelines have been proposed and some solutions have been found to help users in their exploratory search tasks. To this literature review we chose three solutions that are seen in search systems in general, but these solutions can be enhanced further by utilizing user modeling.
 
-To this (literature review/lecture/essay) we chose three solutions that are seen in search systems in general, but these solutions can be enhanced further by (taking advantage of) user modeling. 
-The chosen solutions were (chosen), because 1) they take place in different stages of the search process, 2) their use of user modeling differs, and 3) the reward the user (gets is different).
-While presenting the solutions, these (differences) are explained. In addition, we describe how an exploratory search process benefits from use of user modeling in these three solutions.
+To build a good system where computer and human cooperate to perform a task it is important to take into account some significant characteristics of the user \cite{rich99}. User model is (built of) these characteristics. User models are used in adapting the system for the users. Fischer defines user models as follows:
 
-(move this?)
-\cite{van08}: 
-In order to accomodate to differing needs of users or usergroups over time, a system may use one of three basic approaches. System is called adaptive if it alters it structure, functionality or interface on the basis of a user model generated from \textit{implicit} user input. Adaptable systems use \textit{explicit user input} and need user's active participation. Personalized system is a hybrid of the two aforementioned.
+\blockquote{User models are models that systems have of users that reside inside a computational environment.}
 
+Traditionally a user model has been a model of a typical user \cite{rich99}. In reality often the users vary so much that a traditional user model is insufficient and there is a need for a more specific user model describing an individual user.  A central objective of user modeling is to address the problem that system will be unable to interact with users cooperatively unless it has some means of finding out what the user really knows and does \cite{fischer01}. Since the user's goals may change during the use of system there is a need to refine the user model during the course of the task. User information for building a model may be gathered explicitly from the user by asking questions or implicitly by recording and analyzing user's interactions with the system. Implicit sources of user information are for example looking at the commands or patterns of commands the user uses. When the user model is complex the time to gather facts to fill up the needed information one by one takes too much time. In this situation a sterotype can be used to infer many things at a time. Human traits often occur in clusters and if it is known that a user likes Battlestar Galactica it may be inferred that he is also interested in other science fiction series. 
 
-In the following chapter we introduce basic concepts, solutions and systems that we found exploring the literature. 
-In the Discussion chapter we summarize our findings and point out what is missing and what we expect from future research. 
-The Conclusion chapter summarizes our findings.
+In order to accommodate to differing needs of users or user groups over time, a system may use one of three basic approaches \cite{van08}: System is called \textit{adaptive} if it alters its structure, functionality or interface on the basis of a user model generated from implicit user input; in \textit{Adaptable} systems the user model is constructed with explicit user input and so it requires user's active participation; \textit{Personalized} system is a hybrid of the two aforementioned. 
+
+In this literature review we introduce the problem of exploratory search and some solutions for the problem. We explain what exploratory search is and what distinguishes it from other information retrieval tasks. We cover three techniques that help the users to succeed in their exploratory search tasks efficiently. The chosen solutions were selected, because 1) they are already widely used in practise, 2) they take place in different stages of the search process and 3) their use of user modeling differs. We describe how exploratory search process benefits from the use of user modeling in these three solutions.
+
+In the following chapter we introduce basic concepts of eploratory search and user modeling. After that we present some solutions and systems supporting exploratory search that we found exploring the literature. In the Discussion chapter we summarize our findings and present our newly-found insight and the concerns that emerged while exploring the topic.
 
 
 \section{Literature review}
